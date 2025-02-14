@@ -1,18 +1,127 @@
 
-## **Multiple Linear Regression Analysis**  
 
-#### **Objective of the study**  
-The objective of this study is to build a predictive model using Multiple Linear Regression (MLR) to estimate the Highway mpg (miles per gallon) of a car based on various features such as engine specifications, dimensions, transmission type, and fuel type.
+#  Multiple Linear Regression Analysis: Predicting Highway MPG  
+
+##  **Project Overview**  
+This project applies **Multiple Linear Regression (MLR)** to predict Highway mpg (miles per gallon) of a car(`Fuel Information.Highway MPG`) based on various vehicle features. The dataset includes technical specifications of cars, such as engine type, fuel type, and transmission details.  
+
+---
+
+##  **Objective**  
+- Identify key factors affecting highway fuel efficiency.  
+- Build a robust regression model to predict Highway mpg (miles per gallon) of a car(`Fuel Information.Highway MPG`).  
+- Evaluate the model’s performance and optimize feature selection.  
 
 ---
 
-#### **Problem Statement**  
-Fuel efficiency is a critical factor in car manufacturing, customer decision-making, and environmental impact assessment. Accurate prediction of a car's highway mpg can help:
-
-- Automobile manufacturers improve engine designs and optimize vehicle aerodynamics.
-- Consumers make informed decisions when selecting fuel-efficient vehicles.
-- Policy makers and environmental agencies assess and regulate fuel efficiency standards to reduce carbon emissions.
-  
-Given the increasing demand for fuel-efficient vehicles, predicting highway mpg is essential to ensure more efficient and environmentally friendly automotive solutions.
+##  **Dataset Information**  
+The dataset includes the following features:  
+- **Vehicle Specifications:** `Identification.Model Year`, `Dimensions.Height`, `Dimensions.Width`, etc.  
+- **Engine Details:** `Engine Information.Engine Type`, `Torque`, `Horsepower`, etc.  
+- **Fuel Information:** `Fuel Type`, `City MPG`, etc.  
+- **Transmission Details:** `Number of Forward Gears`, `Transmission Type`.  
 
 ---
+
+##  **Data Preprocessing Steps**  
+-  **Handling duplicated Values:** Removed duplicated values 
+-  **Encoding Categorical Variables:**  
+   - Applied **Target Encoding** for `'Identification.Make'`, `'Identification.Model Year'`, `'Engine Information.Engine Type'`,`'Engine Information.Driveline'` 
+   - Applied **One-Hot Encoding** for `'Fuel Information.Fuel Type'`,`'Engine Information.Transmission'`,`'Identification.Classification'`  
+-  **Feature Scaling:** Standardized numerical features where necessary.  
+-  **Outlier Treatment:** Used **IQR method**  to remove extreme values.  
+
+---
+
+##  **Exploratory Data Analysis (EDA)**  
+
+###  **Correlation Heatmap**  
+A heatmap was generated to analyze the correlation between independent variables and the target variable (`Fuel Information.Highway MPG`).  
+
+
+![Image](https://github.com/user-attachments/assets/6194d804-5e56-4def-8e64-6199d23bdf45)
+ **Key Observations:**  
+- `Fuel Information.City mpg` is highly correlated with `Highway MPG`.  
+- Some features exhibit multicollinearity, requiring feature selection.  
+
+---
+
+##  **Feature Selection**  
+To select the best predictors:  
+- **Recursive Feature Elimination (RFE):** Selected the most impactful features.  
+- **Multicollinearity Check (VIF):** Removed features with **VIF > 10** to avoid redundancy.  
+- **Correlation Analysis:** Chose features highly correlated with the target variable but uncorrelated with each other.  
+
+**Final Selected Features:**  
+```
+['Fuel Information.City mpg', 'Identification.Model Year_encoded', 
+ 'Fuel Information.Fuel Type_Diesel fuel', 'Fuel Information.Fuel Type_E85', 
+ 'Fuel Information.Fuel Type_Gasoline']
+```
+
+---
+
+##  **Model Building**  
+- **Model Used:** Multiple Linear Regression  
+- **Train-Test Split:** 80% Training, 20% Testing  
+- **Evaluation Metrics:**  
+  -  **R² Score:** Indicates how well the model explains variance.  
+  -  **VIF Analysis:** Ensures low multicollinearity.  
+  -  **RMSE:** Measures average error in predictions.  
+
+---
+
+##  **Results & Model Evaluation**  
+
+| Metric  | Before Handling Outliers | After Handling Outliers |
+|---------|--------------------------|-------------------------|
+| R² Score  | 0.9121                    | 0.9495                   |
+| RMSE      | 5.62                     | 3.21                    |
+| Adjusted R² | 0.9357                     | 0.9529                   |
+
+ **After handling outliers, the model became more generalizable with reduced errors.**  
+
+---
+
+##  **Residual Analysis**  
+
+To check model assumptions, we plotted residuals to ensure they followed a normal distribution and exhibited homoscedasticity.
+
+![Image](https://github.com/user-attachments/assets/a661264f-c6c5-468a-bbbd-3ab50f05e84e)
+
+![Image](https://github.com/user-attachments/assets/17a0c464-8575-4a3b-89a5-1c80519de371)
+
+ **Key Takeaways from Residual Analysis:**  
+- The residuals approximately follow a normal distribution.  
+- No clear heteroscedasticity, indicating stable variance.  
+- Confirms that our model meets linear regression assumptions.  
+
+---
+
+##  **Key Takeaways**  
+ - **Feature Engineering Matters:** Proper encoding and selection significantly improved model performance.  
+ - **Multicollinearity is Crucial:** Reducing **VIF** led to more stable coefficients.  
+-  **Outlier Handling is Important:** Post-cleaning, the model showed better predictive accuracy.  
+ - **Business Impact:** This model helps **automobile manufacturers** understand which factors most influence fuel efficiency.  
+
+---
+
+##  **Next Steps**  
+- Try **Ridge/Lasso Regression** to improve regularization.  
+- Perform **Cross-Validation** for better generalization.  
+- Test on **new unseen vehicle data** to validate real-world performance.  
+
+
+---
+
+##  **References**  
+- **Scikit-Learn Documentation**: [https://scikit-learn.org/](https://scikit-learn.org/)  
+- **Pandas Data Manipulation**: [https://pandas.pydata.org/](https://pandas.pydata.org/)  
+
+---
+
+##  **Contributors**  
+ **Aparna S** - [LinkedIn](https://www.linkedin.com/in/aparna-s-60017a290/)  
+
+---
+
