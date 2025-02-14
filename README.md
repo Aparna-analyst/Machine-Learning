@@ -118,10 +118,6 @@ To check model assumptions, we plotted residuals to ensure they followed a norma
  - **Business Impact:** This model helps **automobile manufacturers** understand which factors most influence fuel efficiency.  
 
 ---
-##  **Next Steps**
-Here's an updated `README.md` template with **Project Structure** and **How to Run Your Code** sections, specifically for Google Colab.
-
----
 
 ##  How to Run Your Code
 
