@@ -87,6 +87,9 @@ To select the best predictors:
 Here’s the comparison between the actual values and the predicted values:
 
 
+![Image](https://github.com/user-attachments/assets/789989ac-4f06-4d6b-9af8-b0e73be03f62)
+
+
 ##  **Results & Model Evaluation**  
 
 | Metric  | Before Handling Outliers | After Handling Outliers |
