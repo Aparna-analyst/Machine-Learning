@@ -22,7 +22,7 @@ This project applies **Multiple Linear Regression (MLR)** to predict Highway mpg
 ├── 📄 README.md
 │
 ├── 📂 data/
-│   └── dataset.csv  # Your dataset
+│   └── cars.csv  # Your dataset
 │
 └── 📄 MLR_analysis.ipynb  # Google Colab notebook with the full analysis
 
@@ -83,6 +83,9 @@ To select the best predictors:
   -  **RMSE:** Measures average error in predictions.  
 
 ---
+##  **Original vs Predicted data** 
+Here’s the comparison between the actual values and the predicted values:
+
 
 ##  **Results & Model Evaluation**  
 
@@ -124,13 +127,13 @@ To check model assumptions, we plotted residuals to ensure they followed a norma
 ###  Open the Google Colab Notebook
 Click the link below to open the project in Google Colab:
 ```
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yourusername/your_project_name/blob/main/MLR_analysis.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Aparna-analyst/Machine-Learning/blob/main/MLR_analysis.ipynb)
 ```
 
 ---
 
 ###  Upload the Dataset
-- Make sure to upload your dataset (`dataset.csv`) to Colab by:
+- Make sure to upload your dataset (`cars.csv`) to Colab by:
   - Clicking **Files** on the left sidebar.
   - Clicking **Upload** and selecting your CSV file.
 
