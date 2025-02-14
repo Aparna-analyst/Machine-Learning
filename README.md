@@ -89,7 +89,7 @@ To select the best predictors:
 | Metric  | Before Handling Outliers | After Handling Outliers |
 |---------|--------------------------|-------------------------|
 | R² Score  | 0.9121                    | 0.9495                   |
-| RMSE      | 5.62                     | 3.21                    |
+| RMSE      | 0.0070                     | 0.0432                    |
 | Adjusted R² | 0.9357                     | 0.9529                   |
 
  **After handling outliers, the model became more generalizable with reduced errors.**  
