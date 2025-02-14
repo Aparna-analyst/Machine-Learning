@@ -13,7 +13,20 @@ This project applies **Multiple Linear Regression (MLR)** to predict Highway mpg
 - Evaluate the model’s performance and optimize feature selection.  
 
 ---
+##  **Project Structure** 
+```
+📂 MLR Analysis/
+│
+├── 📄 LICENSE
+│
+├── 📄 README.md
+│
+├── 📂 data/
+│   └── dataset.csv  # Your dataset
+│
+└── 📄 MLR_analysis.ipynb  # Google Colab notebook with the full analysis
 
+```
 ##  **Dataset Information**  
 The dataset includes the following features:  
 - **Vehicle Specifications:** `Identification.Model Year`, `Dimensions.Height`, `Dimensions.Width`, etc.  
@@ -103,6 +116,45 @@ To check model assumptions, we plotted residuals to ensure they followed a norma
  - **Multicollinearity is Crucial:** Reducing **VIF** led to more stable coefficients.  
 -  **Outlier Handling is Important:** Post-cleaning, the model showed better predictive accuracy.  
  - **Business Impact:** This model helps **automobile manufacturers** understand which factors most influence fuel efficiency.  
+
+---
+##  **Next Steps**
+Here's an updated `README.md` template with **Project Structure** and **How to Run Your Code** sections, specifically for Google Colab.
+
+---
+
+##  How to Run Your Code
+
+###  Open the Google Colab Notebook
+Click the link below to open the project in Google Colab:
+```
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yourusername/your_project_name/blob/main/MLR_analysis.ipynb)
+```
+
+---
+
+###  Upload the Dataset
+- Make sure to upload your dataset (`dataset.csv`) to Colab by:
+  - Clicking **Files** on the left sidebar.
+  - Clicking **Upload** and selecting your CSV file.
+
+---
+
+###  Install Dependencies in Colab
+If needed, install dependencies directly in Colab by running:
+```python
+!pip install pandas numpy scikit-learn matplotlib seaborn
+```
+
+---
+
+###  Run the Code
+- Execute all the cells in the notebook step by step by pressing **Shift + Enter**.
+
+---
+
+###  Save Results
+- Download your output files by right-clicking on them in the **Files** section and choosing **Download**.
 
 ---
 
